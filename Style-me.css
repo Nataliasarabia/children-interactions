@@ -1,0 +1,113 @@
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+/*   outline: 1px solid red; */
+  }
+
+body{
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  color: #747779; /* var(--frame-grey) */
+   }
+:root{
+  --width: 500px;
+  --height: 400px;
+  --button-color: #fbe8d2;
+  --button-hover-color: #f9d6ad;
+  --frame-grey: #747779;
+}
+.container,
+.frames,
+.buttons{
+  margin-left: auto;
+  margin-right: auto;
+}
+.container{
+  width: 80%; 
+  padding: 2rem;
+}
+
+.buttons{
+  width: calc(var(--width) - 2rem);
+  }
+
+.frames{
+  height: var(--height);
+  width: var(--width);
+  border: 17px  solid;
+  border-color: var(--frame-grey) #eacfad #eacfad var(--frame-grey);
+  border-radius: 4px;
+  background: url(https://images.unsplash.com/photo-1497881807663-38b9a95b7192?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3024&q=80) center center / 85% no-repeat;
+  margin-bottom: 1rem;
+} 
+
+.lentes:target::before,
+.gorro:target::after,
+.ambos:target::before,
+.ambos:target::after{
+  display: block;
+  position: absolute;
+}
+
+
+.lentes:target::before{
+ content: url("https://i.pinimg.com/originals/60/cb/48/60cb48c8e5c2daf304e3f22531137974.png");
+transform: scale(.35) translate(13%,85%) rotate(3deg) ;
+}
+
+.gorro:target::after{
+  content: url("https://i.kisscc0.com/20180705/apq/kisscc0-knit-cap-beanie-hat-bobcap-5b3dccbb26e1f2.6074877015307767631593.png");
+   transform: rotate(-11deg) scale(.55) translate( 77%,-50%);
+}
+
+.ambos:target::before{
+  content: url("https://i.pinimg.com/originals/60/cb/48/60cb48c8e5c2daf304e3f22531137974.png");
+transform: scale(.35) translate(13%,85%) rotate(3deg) ;
+}
+.ambos:target::after{
+  content: url("https://i.kisscc0.com/20180705/apq/kisscc0-knit-cap-beanie-hat-bobcap-5b3dccbb26e1f2.6074877015307767631593.png");
+  transform: rotate(-11deg) scale(.55) translate( 77%,-50%); 
+}
+
+h1{
+  Text-align: Center;
+  font-size: 2.8rem;
+  color: inherit;
+}
+
+p{
+  text-align: center;
+  font:  1rem arial;
+  margin-bottom: 2rem;
+/*   font-size: 1.2rem; */
+}
+
+button a{
+  line-height: 1.3rem;
+  font-size: 1rem;
+  text-decoration: none;
+  color: black;
+}
+button{
+  padding: .8rem 1.4rem;
+  background-color: var(--button-color);
+  border: none;
+  border-radius: .2rem;
+  margin: .6rem;
+  box-shadow: 1px 1px 2px grey;
+}      
+
+button:hover{
+  background: var(--button-hover-color);
+  color: grey;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+button#restart,
+#restart a{
+  background: var(--frame-grey);
+  color: white;
+}
